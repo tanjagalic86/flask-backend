@@ -2,11 +2,11 @@ from flask import Flask, jsonify
 from werkzeug.exceptions import HTTPException
 
 
-
 def create_app() -> Flask:
     app = Flask(__name__)
 
     from app.routes.api import api_bp
+
     app.register_blueprint(api_bp)
 
     @app.errorhandler(HTTPException)
@@ -18,6 +18,7 @@ def create_app() -> Flask:
             }
         }
         return jsonify(response), e.code
+
     return app
 
 

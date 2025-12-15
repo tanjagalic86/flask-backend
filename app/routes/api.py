@@ -32,9 +32,9 @@ def health():
 def message():
     if not request.is_json:
         raise UnsupportedMediaType("Content-Type must be application/json")
-    
+
     data = request.get_json(silent=True)
 
     validate_message_payload(data)
-    
+
     return jsonify({"received_message": data["message"]}), 201
