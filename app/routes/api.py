@@ -1,5 +1,6 @@
-from flask import Blueprint, jsonify, request
 from typing import Any
+
+from flask import Blueprint, jsonify, request
 from werkzeug.exceptions import BadRequest, UnsupportedMediaType
 
 
